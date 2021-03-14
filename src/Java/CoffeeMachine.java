@@ -9,8 +9,8 @@ public class CoffeeMachine {
 
 interface CoffeeMachineInterface {
 
-    void chooseFirstSelection();
-    void chooseSecondSelection();
+    String chooseFirstSelection();
+    String chooseSecondSelection();
 }
 
 class CoffeeTouchscreenAdapter implements CoffeeMachineInterface {
@@ -21,22 +21,26 @@ class CoffeeTouchscreenAdapter implements CoffeeMachineInterface {
         this.machine = machine;
     }
 
-    public void chooseFirstSelection() {
+    public String chooseFirstSelection() {
         this.machine.selectionA();
+        return this.machine.selectionA();
     }
 
-    public void chooseSecondSelection() {
+    public String chooseSecondSelection() {
         this.machine.selectionB();
+        return this.machine.selectionB();
     }
 }
 
 class OldCoffeeMachine {
 
-    void selectionA(){
+    public String selectionA(){
         System.out.println("selected A");
+        return "Selected A";
     }
 
-    void selectionB(){
+    public String selectionB(){
         System.out.println("selected B");
+        return "Selected B";
     }
 }
